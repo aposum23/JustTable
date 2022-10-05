@@ -13,7 +13,7 @@
       </div>
       <div class="filter">
         <label for="type-of-comparison" class="label">Тип сравнения</label>
-        <select v-on:change="getInformation2()" v-model="typeOfComparison" name="type-of-comparison" class="drop-list">
+        <select v-on:change="getInformation()" v-model="typeOfComparison" name="type-of-comparison" class="drop-list">
           <option selected value=""></option>
           <option value=">">&gt;</option>
           <option value="<">&lt;</option>
@@ -48,7 +48,7 @@ export default {
         if (this.comparisonValue.indexOf('-') !== -1){
           value = new Date(this.comparisonValue + ' 21:00:00');
         }
-        if (this.filterColumn === 'date_field' && typeof(value) !== 'string' || this.filterColumn !== 'date_field'){
+        if ((this.filterColumn === 'date_field' && typeof(value) !== 'string') || this.filterColumn !== 'date_field'){
           this.$emit('reloadList', [this.filterColumn, this.typeOfComparison, value]);
         }
       }
