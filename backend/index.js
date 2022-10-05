@@ -5,7 +5,7 @@ app.use(express.json());
 
 app.use(express.static('public'))
 
-app.post('/api/getInformation', db.getInformation);
+app.get('/api/getInformation', db.getInformation);
 
 app.listen('3000',function(){
          console.log ('Сервер запущен на http://localhost:3000')
