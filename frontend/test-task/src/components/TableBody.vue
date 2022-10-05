@@ -89,7 +89,7 @@ export default {
       filterColumn: this.filterColumn,
       typeOfComparison: this.typeOfComparison,
       comparisonValue: this.comparisonValue};
-      axios.post(
+      axios.get(
         'http://192.168.0.108:3000/api/getInformation',
         params).then(response => (this.information = response.data));
     },
